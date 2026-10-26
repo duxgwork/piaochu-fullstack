@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 仅 debug 包：允许 IP + HTTP 联调，并信任用户主动安装的抓包 CA。 -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors><certificates src="system" /></trust-anchors>
+    </base-config>
+    <debug-overrides>
+        <trust-anchors><certificates src="user" /></trust-anchors>
+    </debug-overrides>
+</network-security-config>

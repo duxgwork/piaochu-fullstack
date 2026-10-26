@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#FCF8F1">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:gravity="center_vertical" android:paddingHorizontal="20dp">
+        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_piaochu" android:contentDescription="漂厨"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingStart="12dp" android:text="漂厨" android:textSize="26sp" android:textStyle="bold" android:textColor="#204D3C"/>
+        <Button android:id="@+id/refreshButton" android:layout_width="64dp" android:layout_height="48dp" android:text="刷新" android:textSize="13sp" style="?android:attr/borderlessButtonStyle"/>
+        <Button android:id="@+id/settingsButton" android:layout_width="64dp" android:layout_height="48dp" android:text="联调" android:textSize="13sp" style="?android:attr/borderlessButtonStyle"/>
+    </LinearLayout>
+    <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="3dp" android:indeterminate="true"/>
+    <TextView android:id="@+id/errorLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="14dp" android:textColor="#9A2C1A" android:background="#FCE6DC" android:accessibilityLiveRegion="polite" android:visibility="gone"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:id="@+id/body" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="20dp" android:paddingTop="12dp" android:paddingBottom="20dp"/>
+    </ScrollView>
+    <LinearLayout android:id="@+id/checkoutBar" android:layout_width="match_parent" android:layout_height="64dp" android:gravity="center_vertical" android:paddingHorizontal="20dp" android:background="#204D3C">
+        <TextView android:id="@+id/cartLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" android:textSize="16sp"/>
+        <Button android:id="@+id/checkoutButton" android:layout_width="120dp" android:layout_height="52dp" android:text="去下单" android:textColor="#204D3C" android:backgroundTint="#F6B766"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:gravity="center_vertical" android:background="#FFFFFF">
+        <Button android:id="@+id/menuTab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="点餐" style="?android:attr/borderlessButtonStyle"/>
+        <Button android:id="@+id/servicesTab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="服务" style="?android:attr/borderlessButtonStyle"/>
+        <Button android:id="@+id/ordersTab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="订单" style="?android:attr/borderlessButtonStyle"/>
+        <Button android:id="@+id/profileTab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:text="我的" style="?android:attr/borderlessButtonStyle"/>
+    </LinearLayout>
+</LinearLayout>

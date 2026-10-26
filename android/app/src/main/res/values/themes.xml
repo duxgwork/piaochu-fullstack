@@ -1,0 +1,4 @@
+<resources><style name="Theme.Piaochu.Base" parent="Theme.AppCompat.Light.NoActionBar">
+<item name="colorPrimary">#204D3C</item><item name="colorPrimaryDark">#204D3C</item><item name="colorAccent">#CE4D2C</item>
+<item name="android:fontFamily">sans</item><item name="android:windowLightStatusBar">true</item><item name="android:statusBarColor">#FCF8F1</item><item name="android:navigationBarColor">#FCF8F1</item><item name="android:windowActionModeOverlay">true</item>
+</style><style name="Theme.Piaochu" parent="Theme.Piaochu.Base"><item name="android:navigationBarColor">#204D3C</item></style></resources>

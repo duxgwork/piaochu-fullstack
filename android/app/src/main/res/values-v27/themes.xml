@@ -1,0 +1,1 @@
+<resources><style name="Theme.Piaochu" parent="Theme.Piaochu.Base"><item name="android:windowLightNavigationBar">true</item><item name="android:navigationBarColor">#FCF8F1</item></style></resources>

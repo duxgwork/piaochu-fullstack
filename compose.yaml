@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: piaochu
+      POSTGRES_USER: piaochu
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?请复制.env.example并设置数据库密码}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U piaochu -d piaochu"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+  server:
+    build: ./server
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      DB_URL: jdbc:postgresql://postgres:5432/piaochu
+      DB_USERNAME: piaochu
+      DB_PASSWORD: ${DB_PASSWORD}
+      DEMO_DATA: ${DEMO_DATA:-true}
+      OPERATOR_USERNAME: ${OPERATOR_USERNAME:-}
+      OPERATOR_PASSWORD: ${OPERATOR_PASSWORD:-}
+    ports:
+      - "${SERVER_BIND_ADDRESS:-127.0.0.1}:8090:8090"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+volumes:
+  postgres-data:
